@@ -6,7 +6,7 @@ public class CalculatorSingleton {
         return new CalculatorSingleton();
     }
 
-    public int sum(int numbers) {
-        return numbers;
+    public int sum(int... numbers) {
+        return 1;
     }
 }
