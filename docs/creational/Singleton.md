@@ -6,7 +6,7 @@
 
 * **Lazily loaded:** I might be lazily loaded, so the instance will be created only when needed
 
-There are a lot of examples of this pattern inside Java API and frameworks. Just to mention some of them: Runtime, Calendar, Logger, etc...
+There are a lot of examples of this pattern inside Java API and frameworks. Just to mention some of them: Runtime, Logger, etc...
 
 Inside Spring, the beans are created following a Singleton pattern by default (instead of Prototype), so only one instance of each bean will exist inside Spring context.
 
@@ -26,3 +26,12 @@ So to create a singleton you need to guarantee these properties:
 * It can be lazily loaded
 * It must be thread safe
 
+# Pitfalls
+
+It is often overused. Keep in mind that this kind of objects cannot represent a domain object, since it will be just one instance and its status will be shared among all the threads.
+
+It cannot have an interface, and it is not a very flexible object. It is useful to have a set of pure functions that are very correlated grouped in an object.
+ 
+It is sometimes confused for a Factory. A singleton always returns the same instance, but a factory returns new instances (Prototype).
+
+Some objects that look like a singleton are no singleton in fact. For example java.util.Calendar is not a singleton, since it returns a new instance every time you call getInstance method.

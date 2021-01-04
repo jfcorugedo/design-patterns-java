@@ -2,7 +2,11 @@
 
 This repository contains all the design patterns described by the gang of four, coded using Java.
 
-## Why did I learn how to use design patterns?
+## Why did I create this repository?
+
+I've been using design patterns for a lot of years, but I decided to create this repository to practice TDD creating all of them.
+
+## What are patters a useful tool?
 
 I usually use patterns to apply two different rules:
  * Don't reinvent the wheel all the time
