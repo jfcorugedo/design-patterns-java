@@ -20,7 +20,7 @@ In Java it is pretty common to code this pattern using a private instance of the
 
 To get the instance of the singleton there is an static method, and it should not require any parameter. Otherwise we were implementing a factory pattern, instead of a Singleton.
 
-So to create a singleton you need to guarantee these tests (following TDD test list principle):
+So to create a singleton you need to guarantee these properties:
 * No one can create an instance, but the singleton class
 * Only one instance should be created no mather who is accessing it
 * It can be lazily loaded
