@@ -1,5 +1,7 @@
 package com.jfcorugedo.creational.singleton;
 
+import java.util.Arrays;
+
 public class CalculatorSingleton {
 
     public static CalculatorSingleton getInstance() {
@@ -7,6 +9,6 @@ public class CalculatorSingleton {
     }
 
     public int sum(int... numbers) {
-        return 1;
+        return Arrays.stream(numbers).sum();
     }
 }
