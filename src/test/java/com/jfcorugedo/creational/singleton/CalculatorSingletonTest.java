@@ -30,4 +30,10 @@ public class CalculatorSingletonTest {
         assertThat(calculator.sum(0,1)).isEqualTo(1);
         assertThat(calculator.sum(0,1,2)).isEqualTo(3); // Add one more assert to triangulate the solution
     }
+
+    @Test
+    public void singletonHasOnlyOneInstance() {
+
+        assertThat(CalculatorSingleton.getInstance()).as("Singleton instances must be exactly the same").matches(calculator -> calculator == CalculatorSingleton.getInstance());
+    }
 }
