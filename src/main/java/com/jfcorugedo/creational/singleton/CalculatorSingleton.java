@@ -4,8 +4,18 @@ import java.util.Arrays;
 
 public class CalculatorSingleton {
 
+    private static CalculatorSingleton singleton;
+
+    private CalculatorSingleton() {
+
+    }
+
     public static CalculatorSingleton getInstance() {
-        return new CalculatorSingleton();
+        if(singleton == null) {
+            singleton = new CalculatorSingleton();
+        }
+
+        return singleton;
     }
 
     public int sum(int... numbers) {
