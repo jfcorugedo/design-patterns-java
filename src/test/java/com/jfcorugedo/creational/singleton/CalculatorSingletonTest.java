@@ -28,5 +28,6 @@ public class CalculatorSingletonTest {
         CalculatorSingleton calculator = CalculatorSingleton.getInstance();
 
         assertThat(calculator.sum(0,1)).isEqualTo(1);
+        assertThat(calculator.sum(0,1,2)).isEqualTo(3); // Add one more assert to triangulate the solution
     }
 }
