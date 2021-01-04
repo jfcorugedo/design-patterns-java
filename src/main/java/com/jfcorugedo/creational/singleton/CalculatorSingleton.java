@@ -3,10 +3,10 @@ package com.jfcorugedo.creational.singleton;
 public class CalculatorSingleton {
 
     public static CalculatorSingleton getInstance() {
-        return null;
+        return new CalculatorSingleton();
     }
 
     public int sum(int numbers) {
-        return 0;
+        return numbers;
     }
 }
