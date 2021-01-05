@@ -39,3 +39,18 @@ So to create a builder you need to guarantee these properties:
 
 The main drawback is that any subclass of Prototype must implement clone method, which may be difficult depending on the nature of the object.
 Cicular referencies or objects inside the prototype that does not support clone can make implementing clone method difficult.
+
+You also need to think carefully about when to copy properties of a sub object (deep copy) or when not to do it (Shallow). As a rule, shallow is only recommended if sub objects are Immutable, otherwise it is quite dangerous.
+
+In Java, instead of using Cloneable interface and clone method it is recomended to use a copy constructor:
+
+```
+public class MyClass {
+  // ...
+
+  /* Copy constructor to make a clone of the given object */
+  MyClass (MyClass source) {
+    //...
+  }
+}
+```
