@@ -9,7 +9,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * - Builder can create instances of Person
  * - Builder can set name attribute inside Person instances
  * - Builder can set all the skills of this person
- * - Person instances are immutable
+ * - Equality of person instances
+ * - Person instances are immutable (No idea how to test this)
  */
 public class PersonTest {
 
@@ -36,5 +37,13 @@ public class PersonTest {
 
         assertThat(person.getSkills()).hasSize(1);
         assertThat(person.getSkills()).containsExactly("Java");
+    }
+
+    @Test
+    public void personInstancesWithSameAttributesAreEquals() {
+
+        assertThat(Person.builder().name("Juan").build()).isEqualTo(Person.builder().name("Juan").build());
+        // another assert to triangulate solution
+        assertThat(Person.builder().name("Juan").build()).isNotEqualTo(Person.builder().name("Pablo").build());
     }
 }
