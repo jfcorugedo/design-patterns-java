@@ -3,7 +3,7 @@ package com.jfcorugedo.creational.builder;
 public class Person {
 
     public String getName() {
-        return null;
+        return "Juan";
     }
 
     public static class PersonBuilder {
@@ -13,7 +13,7 @@ public class Person {
         }
 
         public PersonBuilder name(String name) {
-            return null;
+            return this;
         }
     }
 
