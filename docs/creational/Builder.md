@@ -1,10 +1,14 @@
 # Concepts
 
+Separate the construction of a complex object from its representation so that the same construction process can create different representations. 
+
 It is a useful pattern to create objects that have a lot of properties and tha are going to be immutable after creation.
 
 * **Handles complex constructors:** By using this pattern you can deal with complex constructors easier.
 
 * **Large number of parameters:** With the fluent api it is easier to deal with objects that need a lot of parameters
+
+* **Isolates construction code from representational code**: By using this patter the code in charge of creating the object is isolated by the code of the object itself.
 
 * **Force Immutability:** It will help you ensure that instances of this object are going to be immutable.
 

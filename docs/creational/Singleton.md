@@ -1,5 +1,7 @@
 # Concepts
 
+Ensure a class only has one instance, and provide a global point of access to it.
+
 * **Only one instance:** This pattern guarantees that only one instance of the given object will be created.
 
 * **Control:** In addition, it also guarantees the control of the resource. Only one entity knows how to create the object: the object itself.
