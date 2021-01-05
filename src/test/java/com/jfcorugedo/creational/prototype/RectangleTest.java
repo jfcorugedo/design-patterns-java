@@ -6,8 +6,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * TDD tests list:
- * - Rectangle must have a default width and height
- * - Rectangle must have a default background color
+ * - Rectangle must have a default width
+ * - Rectangle must have a default height
  * - Rectangle must be created using prototype
  * - Each instance must be different from the previous one
  */

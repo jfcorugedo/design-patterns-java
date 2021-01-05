@@ -10,6 +10,14 @@ public class Rectangle {
         this.height = height;
     }
 
+    /*
+     * Copy constructor used to simulate the behaviour of Object#clone operation
+     */
+    protected Rectangle(Rectangle rectangle) {
+        this.width = rectangle.getWidth();
+        this.height = rectangle.getHeight();
+    }
+
     public int getWidth() {
         return this.width;
     }
