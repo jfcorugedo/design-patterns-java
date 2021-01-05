@@ -1,11 +1,17 @@
 package com.jfcorugedo.creational.builder;
 
+import java.util.List;
+
 public class Person {
 
     private String name;
 
     public String getName() {
         return this.name;
+    }
+
+    public List<String> getSkills() {
+        return null;
     }
 
     public static class PersonBuilder {
@@ -19,6 +25,10 @@ public class Person {
 
         public PersonBuilder name(String name) {
             this.name = name;
+            return this;
+        }
+
+        public PersonBuilder skill(String skill) {
             return this;
         }
     }
