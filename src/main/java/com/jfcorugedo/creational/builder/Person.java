@@ -11,7 +11,7 @@ public class Person {
     }
 
     public List<String> getSkills() {
-        return null;
+        return List.of("Java");
     }
 
     public static class PersonBuilder {
