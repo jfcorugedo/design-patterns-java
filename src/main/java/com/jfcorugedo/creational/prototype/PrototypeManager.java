@@ -5,6 +5,6 @@ public class PrototypeManager {
     private PrototypeManager() {}
 
     public static Rectangle buildRectangle() {
-        return new Rectangle(20);
+        return new Rectangle(20, 10);
     }
 }

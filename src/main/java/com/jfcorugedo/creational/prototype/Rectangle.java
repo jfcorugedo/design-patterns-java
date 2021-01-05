@@ -3,9 +3,11 @@ package com.jfcorugedo.creational.prototype;
 public class Rectangle {
 
     private int width;
+    private int height;
 
-    protected Rectangle(int width) {
+    protected Rectangle(int width, int height) {
         this.width = width;
+        this.height = height;
     }
 
     public int getWidth() {
@@ -13,6 +15,6 @@ public class Rectangle {
     }
 
     public int getHeight() {
-        return 10;
+        return this.height;
     }
 }
