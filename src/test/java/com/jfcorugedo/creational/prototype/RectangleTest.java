@@ -28,4 +28,10 @@ public class RectangleTest {
 
         assertThat(rectangle.getHeight()).isEqualTo(10);
     }
+
+    @Test
+    public void instancesAreUnique() {
+
+        assertThat(PrototypeManager.buildRectangle()).as("Rectangle instances must be unique").matches(rectangle -> rectangle != PrototypeManager.buildRectangle());
+    }
 }
