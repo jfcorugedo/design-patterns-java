@@ -8,6 +8,8 @@ It is a useful pattern to create objects that have a lot of properties and tha a
 
 * **Force Immutability:** It will help you ensure that instances of this object are going to be immutable.
 
+* **Solve telescoping constructors problem:** Instead of having a lot of overloaded constructors it is better to have a Builder pattern
+
 There are a lot of examples of this pattern inside Java API and frameworks. Just to mention some of them: StringBuilder, Locale.Builder, etc...
 
 # Design
@@ -24,3 +26,6 @@ So to create a builder you need to guarantee these properties:
 
 # Pitfalls
 
+It does not have any big pitfall or drawback.
+
+If we compare it with the Prototype patter, both tries to solve the problem of creating objects with complex constructors or forcing immutability. But Prototype does not rely on constructors, but on cloning objects.
