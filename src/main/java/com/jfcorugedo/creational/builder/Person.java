@@ -9,6 +9,8 @@ public class Person {
         }
     }
 
+    private Person() {}
+
     public static PersonBuilder builder() {
         return new PersonBuilder();
     }
