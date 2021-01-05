@@ -33,3 +33,5 @@ So to create a builder you need to guarantee these properties:
 It does not have any big pitfall or drawback.
 
 If we compare it with the Prototype patter, both tries to solve the problem of creating objects with complex constructors or forcing immutability. But Prototype does not rely on constructors, but on cloning objects.
+In case of Builder, the client is the one that gives values to all the attributes of the new object. 
+However, in the case of Prototype, it is the prototypical object the one that knows the values of each property, not the client.

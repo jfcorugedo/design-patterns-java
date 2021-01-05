@@ -15,6 +15,12 @@ It is also useful when instances of a class have one of only a few different com
 
 * **Does not use 'new':** After creating the prototypical instance it does not longer use new, but it uses clone instead.
 
+* **Construction not handled by client:** The client does not need to know all the values needed to create an instance. The prototypical object is the one knows how to clone itself with proper values.
+
+* **Shallow vs Deep copy:** You need to choose whether or not you need to copy everything (deep copy) or just the immediate properties (shallow), and pass a reference to the same sub objects.
+
+* **Prototype manager:** When the number of prototypes in a system isn't fixed (that is, they can be created and destroyed dynamically), keep a registry of available prototypes. A prototype manager is an associative store that returns the prototype match- ing a given key. It has operations for registering a prototype under a key and for unregistering it. Clients can change or even browse through the registry at run-time. 
+
 The main example inside Java API is Object.clone method.
 
 # Design
