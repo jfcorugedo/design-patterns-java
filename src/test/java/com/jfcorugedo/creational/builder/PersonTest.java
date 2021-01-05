@@ -28,4 +28,13 @@ public class PersonTest {
 
         assertThat(person.getName()).isEqualTo("Juan");
     }
+
+    @Test
+    public void builderCanSetSkills() {
+
+        Person person = Person.builder().skill("Java").build();
+
+        assertThat(person.getSkills()).hasSize(1);
+        assertThat(person.getSkills()).containsExactly("Java");
+    }
 }
