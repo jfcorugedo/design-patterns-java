@@ -2,6 +2,7 @@ package com.jfcorugedo.creational.builder;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Person {
 
@@ -14,6 +15,20 @@ public class Person {
 
     public List<String> getSkills() {
         return this.skills;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return Objects.equals(name, person.name) &&
+                Objects.equals(skills, person.skills);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, skills);
     }
 
     public static class PersonBuilder {
