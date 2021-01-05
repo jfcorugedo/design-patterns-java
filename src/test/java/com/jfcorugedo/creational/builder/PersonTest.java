@@ -45,5 +45,8 @@ public class PersonTest {
         assertThat(Person.builder().name("Juan").build()).isEqualTo(Person.builder().name("Juan").build());
         // another assert to triangulate solution
         assertThat(Person.builder().name("Juan").build()).isNotEqualTo(Person.builder().name("Pablo").build());
+        // Adds more assert because of a feeling about how equals deals with List attributes
+        assertThat(Person.builder().skill("Java").build()).isEqualTo(Person.builder().skill("Java").build());
+        assertThat(Person.builder().skill("Java").build()).isNotEqualTo(Person.builder().skill("Javascript").build());
     }
 }
