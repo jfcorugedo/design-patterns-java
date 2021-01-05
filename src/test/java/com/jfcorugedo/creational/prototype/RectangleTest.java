@@ -20,4 +20,12 @@ public class RectangleTest {
 
         assertThat(rectangle.getWidth()).isEqualTo(20);
     }
+
+    @Test
+    public void hasDefaultHeight() {
+
+        Rectangle rectangle = PrototypeManager.buildRectangle();
+
+        assertThat(rectangle.getHeight()).isEqualTo(10);
+    }
 }
