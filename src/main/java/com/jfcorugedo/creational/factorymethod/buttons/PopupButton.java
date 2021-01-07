@@ -1,4 +1,11 @@
 package com.jfcorugedo.creational.factorymethod.buttons;
 
-public class PopupButton {
+import com.jfcorugedo.creational.factorymethod.actions.Action;
+import com.jfcorugedo.creational.factorymethod.behaviours.Clickable;
+
+public class PopupButton implements Clickable {
+    @Override
+    public Action click() {
+        return null;
+    }
 }
