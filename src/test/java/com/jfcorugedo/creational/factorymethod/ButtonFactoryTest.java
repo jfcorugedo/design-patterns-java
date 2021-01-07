@@ -2,6 +2,7 @@ package com.jfcorugedo.creational.factorymethod;
 
 import com.jfcorugedo.creational.factorymethod.actions.SubmitAction;
 import com.jfcorugedo.creational.factorymethod.behaviours.Clickable;
+import com.jfcorugedo.creational.factorymethod.buttons.PopupButton;
 import com.jfcorugedo.creational.factorymethod.buttons.SubmitButton;
 import org.junit.Test;
 
