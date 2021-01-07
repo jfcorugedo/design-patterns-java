@@ -1,5 +1,6 @@
 package com.jfcorugedo.creational.factorymethod;
 
+import com.jfcorugedo.creational.factorymethod.actions.PopupAction;
 import com.jfcorugedo.creational.factorymethod.actions.SubmitAction;
 import com.jfcorugedo.creational.factorymethod.behaviours.Clickable;
 import com.jfcorugedo.creational.factorymethod.buttons.PopupButton;
