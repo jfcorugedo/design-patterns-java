@@ -29,4 +29,12 @@ public class ButtonFactoryTest {
 
         assertThat(new PopupButton()).isInstanceOf(Clickable.class);
     }
+
+    @Test
+    public void popupButtonProducesPopupActionWhenClicked() {
+
+        Clickable popupButton = new PopupButton();
+
+        assertThat(popupButton.click()).isInstanceOf(PopupAction.class);
+    }
 }
