@@ -37,7 +37,7 @@ This group consists on all the patterns that solves how objects are created:
 * [Singleton](./docs/creational/Singleton.md)
 * [Builder](./docs/creational/Builder.md)
 * [Prototype](./docs/creational/Prototype.md)
-* [Factory](./docs/creational/Factory.md)
+* [Factory](./docs/creational/FactoryMethod.md)
 * [AbstractFactory](./docs/creational/AbstractFactory.md)
 
 
