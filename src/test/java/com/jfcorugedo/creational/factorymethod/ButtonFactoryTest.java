@@ -1,5 +1,6 @@
 package com.jfcorugedo.creational.factorymethod;
 
+import com.jfcorugedo.creational.factorymethod.actions.NoAction;
 import com.jfcorugedo.creational.factorymethod.actions.PopupAction;
 import com.jfcorugedo.creational.factorymethod.actions.SubmitAction;
 import com.jfcorugedo.creational.factorymethod.behaviours.Clickable;
@@ -39,5 +40,13 @@ public class ButtonFactoryTest {
         ButtonFactory buttonFactory = new ButtonFactory();
 
         assertThat(buttonFactory.createClickable(Clickable.Type.POPUP).click()).isInstanceOf(PopupAction.class);
+    }
+
+    @Test
+    public void askingForNonButtonClickableProducesNoActionWhenClicked() {
+
+        ButtonFactory buttonFactory = new ButtonFactory();
+
+        assertThat(buttonFactory.createClickable(Clickable.Type.INPUT_TEXT).click()).isInstanceOf(NoAction.class);
     }
 }
