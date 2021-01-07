@@ -4,4 +4,6 @@ import com.jfcorugedo.creational.factorymethod.actions.Action;
 
 public interface Clickable {
     Action click();
+
+    public enum Type {SUBMIT, POPUP}
 }

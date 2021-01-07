@@ -14,7 +14,7 @@ public class ButtonFactoryTest {
 
         ButtonFactory buttonFactory = new ButtonFactory();
 
-        assertThat(buttonFactory.createSubmitButton()).isInstanceOf(Clickable.class);
+        assertThat(buttonFactory.createClickable(Clickable.Type.SUBMIT)).isInstanceOf(Clickable.class);
     }
 
     @Test
@@ -22,7 +22,7 @@ public class ButtonFactoryTest {
 
         ButtonFactory buttonFactory = new ButtonFactory();
 
-        assertThat(buttonFactory.createSubmitButton().click()).isInstanceOf(SubmitAction.class);
+        assertThat(buttonFactory.createClickable(Clickable.Type.SUBMIT).click()).isInstanceOf(SubmitAction.class);
     }
 
     @Test
@@ -30,7 +30,7 @@ public class ButtonFactoryTest {
 
         ButtonFactory buttonFactory = new ButtonFactory();
 
-        assertThat(buttonFactory.createPopupButton()).isInstanceOf(Clickable.class);
+        assertThat(buttonFactory.createClickable(Clickable.Type.POPUP)).isInstanceOf(Clickable.class);
     }
 
     @Test
@@ -38,6 +38,6 @@ public class ButtonFactoryTest {
 
         ButtonFactory buttonFactory = new ButtonFactory();
 
-        assertThat(buttonFactory.createPopupButton().click()).isInstanceOf(PopupAction.class);
+        assertThat(buttonFactory.createClickable(Clickable.Type.POPUP).click()).isInstanceOf(PopupAction.class);
     }
 }
