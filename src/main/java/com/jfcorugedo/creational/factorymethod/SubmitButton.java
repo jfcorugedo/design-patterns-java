@@ -1,4 +1,4 @@
 package com.jfcorugedo.creational.factorymethod;
 
-public class SubmitButton {
+public class SubmitButton implements Clickable {
 }
