@@ -11,4 +11,12 @@ public class ButtonFactoryTest {
 
         assertThat(new SubmitButton()).isInstanceOf(Clickable.class);
     }
+
+    @Test
+    public void submitButtonProducesSubmitActionWhenClicked() {
+
+        Clickable submitButton = new SubmitButton();
+
+        assertThat(submitButton.click()).isInstanceOf(SubmitAction.class);
+    }
 }
