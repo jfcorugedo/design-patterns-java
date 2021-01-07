@@ -3,8 +3,6 @@ package com.jfcorugedo.creational.factorymethod;
 import com.jfcorugedo.creational.factorymethod.actions.PopupAction;
 import com.jfcorugedo.creational.factorymethod.actions.SubmitAction;
 import com.jfcorugedo.creational.factorymethod.behaviours.Clickable;
-import com.jfcorugedo.creational.factorymethod.buttons.PopupButton;
-import com.jfcorugedo.creational.factorymethod.buttons.SubmitButton;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -14,28 +12,32 @@ public class ButtonFactoryTest {
     @Test
     public void submitButtonIsClickable() {
 
-        assertThat(new SubmitButton()).isInstanceOf(Clickable.class);
+        ButtonFactory buttonFactory = new ButtonFactory();
+
+        assertThat(buttonFactory.createSubmitButton()).isInstanceOf(Clickable.class);
     }
 
     @Test
     public void submitButtonProducesSubmitActionWhenClicked() {
 
-        Clickable submitButton = new SubmitButton();
+        ButtonFactory buttonFactory = new ButtonFactory();
 
-        assertThat(submitButton.click()).isInstanceOf(SubmitAction.class);
+        assertThat(buttonFactory.createSubmitButton().click()).isInstanceOf(SubmitAction.class);
     }
 
     @Test
     public void popupButtonIsClickable() {
 
-        assertThat(new PopupButton()).isInstanceOf(Clickable.class);
+        ButtonFactory buttonFactory = new ButtonFactory();
+
+        assertThat(buttonFactory.createPopupButton()).isInstanceOf(Clickable.class);
     }
 
     @Test
     public void popupButtonProducesPopupActionWhenClicked() {
 
-        Clickable popupButton = new PopupButton();
+        ButtonFactory buttonFactory = new ButtonFactory();
 
-        assertThat(popupButton.click()).isInstanceOf(PopupAction.class);
+        assertThat(buttonFactory.createPopupButton().click()).isInstanceOf(PopupAction.class);
     }
 }
