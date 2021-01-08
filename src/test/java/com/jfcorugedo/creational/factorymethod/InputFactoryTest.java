@@ -17,6 +17,14 @@ public class InputFactoryTest {
     }
 
     @Test
+    public void inputTextProducesWritableActionWhenClicked() {
+
+        InputFactory inputFactory = new InputFactory();
+
+        assertThat(inputFactory.createClickable(Clickable.Type.INPUT_TEXT).click()).isInstanceOf(WritableAction.class);
+    }
+
+    @Test
     public void askingForNonInputClickableProducesNoActionWhenClicked() {
 
         InputFactory inputFactory = new InputFactory();
