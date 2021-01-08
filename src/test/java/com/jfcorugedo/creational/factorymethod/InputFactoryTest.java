@@ -1,6 +1,7 @@
 package com.jfcorugedo.creational.factorymethod;
 
 import com.jfcorugedo.creational.factorymethod.actions.NoAction;
+import com.jfcorugedo.creational.factorymethod.actions.WritableAction;
 import com.jfcorugedo.creational.factorymethod.behaviours.Clickable;
 import org.junit.Test;
 
