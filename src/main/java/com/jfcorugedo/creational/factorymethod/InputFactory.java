@@ -8,7 +8,7 @@ import java.util.EnumMap;
 import java.util.Map;
 import java.util.function.Supplier;
 
-public class InputFactory {
+public class InputFactory extends ClickableFactory {
 
     private Map<Clickable.Type, Supplier<Clickable>> inputs = new EnumMap<>(Clickable.Type.class);
 
