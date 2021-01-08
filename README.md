@@ -1,10 +1,55 @@
-# Design Patterns (java implementation)
+# Design Patterns (java implementation) following TDD
 
 This repository contains all the design patterns described by the gang of four, coded using Java.
 
 ## Why did I create this repository?
 
-I've been using design patterns for a lot of years, but I decided to create this repository to practice TDD creating all of them.
+I've been using design patterns for a lot of years, but I decided to create this repository **to practice TDD creating all of them**.
+
+## A few words about Test Driven Development
+
+The main goal of TDD is quite simple: 
+
+*Try to deliver only Clean code that works*
+
+However, every software engineer knows that this is not always an easy task. 
+
+Deadlines, complex features, accidental complexity, lack of automatic tests, poor designs... are only a handful of things that can ruin your objective.
+
+TDD try to get to this goal using a simple but disrupting technique: start thinking about the automatic tests before coding a single line of the feature.
+
+In fact its process consists on a loop of three states: **red**, **green** and **refactor**.
+
+To see these steps in more detail:
+
+1. Write a test 
+2. Make it compile 
+3. Run it to see that it fails 
+4. Make it run 
+5. Remove duplication 
+
+So you need to start writing the test, even if it does not compile!
+
+To be honest it made me crazy the first time it tried this approach. For a long time I've been codign the logic first, and the automatic tests.
+
+However, this approach has some drawbacks: Some times your business code is hard to be tested, just because you didn't thing about testing when you write it. Other times it is overcomplicated, just because you were thinking about some future needs that you really don't know if they are going to be need or not.
+
+I finally realized that the problems I found trying to code automatic tests are in fact design problems in my code, and I need to address them in advance.
+
+That's the reason I read this fantastic book: *Test-Driven Development By Example* written by Kent Beck. It is an amazing book, very easy to read since it follows a practical example.
+
+I started to follow these principles, and I need to say that is hard but very stimulating. It helps me improve my designs from the very beginning and in addition I have an excellent test coverage and quality without an extra effort.
+
+In addition I started to have this great side effects:
+* I started to make decision based on the code, not on opinions or abstract ideas.
+* My development environment started to give me feedback about any change in my code immediately.
+* Making the test first drive me to a more cohesive and less coupled components. High coupled components are hard to test, so I tend to avoid coupling. And start thinking about the test help me follow the single responsibility principle, rising the cohesion of my components.
+
+Nevertheless, it is not an easy path. You need to choose between a *Fake it* approach or an *Obvious implementation*. Or you might need to triangulate the problem. 
+                                       
+If you know what to type and the design: Obvious implementation. If you don't know what to type: fake it. If the right design isn't clear: triangulate. 
+
+So the purpose of this repository is to code all the design patterns, but following the TDD loop: starting with the test and improving the designs step by step. 
 
 ## What are patters a useful tool?
 
