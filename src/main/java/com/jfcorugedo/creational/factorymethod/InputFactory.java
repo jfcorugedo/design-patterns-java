@@ -1,6 +1,5 @@
 package com.jfcorugedo.creational.factorymethod;
 
-import com.jfcorugedo.creational.factorymethod.actions.NoAction;
 import com.jfcorugedo.creational.factorymethod.behaviours.Clickable;
 import com.jfcorugedo.creational.factorymethod.inputs.InputText;
 
@@ -16,7 +15,8 @@ public class InputFactory extends ClickableFactory {
         inputs.put(Clickable.Type.INPUT_TEXT, InputText::new);
     }
 
+    @Override
     public Clickable createClickable(Clickable.Type type) {
-        return inputs.getOrDefault(type, () -> NoAction::new).get();
+        return inputs.getOrDefault(type, () -> super.createClickable(type)).get();
     }
 }

@@ -1,6 +1,5 @@
 package com.jfcorugedo.creational.factorymethod;
 
-import com.jfcorugedo.creational.factorymethod.actions.NoAction;
 import com.jfcorugedo.creational.factorymethod.behaviours.Clickable;
 import com.jfcorugedo.creational.factorymethod.buttons.PopupButton;
 import com.jfcorugedo.creational.factorymethod.buttons.SubmitButton;
@@ -17,8 +16,9 @@ public class ButtonFactory extends ClickableFactory {
         buttons.put(Clickable.Type.POPUP, PopupButton::new);
     }
 
+    @Override
     public Clickable createClickable(Clickable.Type type) {
 
-        return buttons.getOrDefault(type, () -> NoAction::new).get();
+        return buttons.getOrDefault(type, () -> super.createClickable(type)).get();
     }
 }
