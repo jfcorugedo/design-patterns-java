@@ -35,7 +35,7 @@ public class TIEAdvancedTest {
     @Test
     public void attack() {
 
-        TIEAdvanced tieAdvanced = (TIEAdvanced)new ImperialStarfighterFactory().createStartfighter();
+        Starfighter tieAdvanced = new ImperialStarfighterFactory().createStartfighter();
 
         assertThat(tieAdvanced.attack()).isEqualTo(2*50);
     }
