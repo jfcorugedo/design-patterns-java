@@ -8,7 +8,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * TDD tests list:
- * - X-Wing Starfighter moves 1458 meters per round (one round is 10 seconds)
+ * - X-Wing Starfighter moves 1458 meters per round (one round is 5 seconds)
  * - X-Wing Starfighter attack produces 4 laser impacts that hits everything in front of it at 1000 meters or less
  * - X-Wing Starfighter has 50 units of shield to protect itself
  */
