@@ -28,7 +28,7 @@ public class XWingTest {
         XWing xWing = new XWing(50, 0, 0, 0);
         xWing.move();
 
-        assertThat(xWing.getPosition().getX()).isEqualTo(1458);
+        assertThat(xWing.getPosition().getX()).isEqualTo(xWing.getSpeedPerRound());
         assertThat(xWing.getPosition().getY()).isEqualTo(0);
     }
 }

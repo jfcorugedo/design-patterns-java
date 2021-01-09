@@ -5,6 +5,7 @@ import java.awt.geom.Point2D;
 
 public class XWing {
 
+    private int speedPerRound = 1458;
     private int shield;
     private Point2D currentPosition;
     private double directionAngle;
@@ -15,13 +16,17 @@ public class XWing {
         this.directionAngle = initialAngle;
     }
 
+    public int getSpeedPerRound() {
+        return this.speedPerRound;
+    }
+
     public int getShield() {
         return shield;
     }
 
     public void move() {
-        double newX = this.currentPosition.getX() + 1458*Math.cos(this.directionAngle);
-        double newY = this.currentPosition.getY() + 1458*Math.sin(this.directionAngle);
+        double newX = this.currentPosition.getX() + getSpeedPerRound() *Math.cos(this.directionAngle);
+        double newY = this.currentPosition.getY() + getSpeedPerRound()*Math.sin(this.directionAngle);
 
         this.currentPosition = new Point2D.Double(newX, newY);
     }
