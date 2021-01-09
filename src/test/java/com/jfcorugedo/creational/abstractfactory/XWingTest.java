@@ -21,4 +21,14 @@ public class XWingTest {
 
         assertThat(xWing.getShield()).isEqualTo(50);
     }
+
+    @Test
+    public void moveXWing() {
+
+        XWing xWing = new XWing(50);
+        xWing.move();
+
+        assertThat(xWing.getPosition().getX()).isEqualTo(1458);
+        assertThat(xWing.getPosition().getY()).isEqualTo(0);
+    }
 }
