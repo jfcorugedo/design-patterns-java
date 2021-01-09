@@ -15,7 +15,7 @@ public class XWing extends Starfighter{
         this.shield = shield;
         this.currentPosition = new Point2D.Double(x, y);
         this.directionAngle = initialAngle;
-        this.laserPower = 200;
+        this.laserPower = laserPower;
     }
 
     public int getSpeedPerRound() {
