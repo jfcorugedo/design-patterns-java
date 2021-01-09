@@ -1,8 +1,6 @@
 package com.jfcorugedo.creational.abstractfactory;
 
-import com.jfcorugedo.creational.abstractfactory.starfighter.ImperialStarfighterFactory;
-import com.jfcorugedo.creational.abstractfactory.starfighter.Starfighter;
-import com.jfcorugedo.creational.abstractfactory.starfighter.TIEAdvanced;
+import com.jfcorugedo.creational.abstractfactory.starfighter.*;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -32,5 +30,13 @@ public class TIEAdvancedTest {
 
         assertThat(tieAdvanced.getPosition().getX()).isEqualTo(1667);
         assertThat(tieAdvanced.getPosition().getY()).isZero();
+    }
+
+    @Test
+    public void attack() {
+
+        TIEAdvanced tieAdvanced = (TIEAdvanced)new ImperialStarfighterFactory().createStartfighter();
+
+        assertThat(tieAdvanced.attack()).isEqualTo(2*50);
     }
 }
