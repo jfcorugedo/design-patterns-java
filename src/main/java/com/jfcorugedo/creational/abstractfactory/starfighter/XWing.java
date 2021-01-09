@@ -20,13 +20,13 @@ public class XWing {
     }
 
     public void move() {
-
-    }
-
-    public Point2D getPosition() {
         double newX = this.currentPosition.getX() + 1458*Math.cos(this.directionAngle);
         double newY = this.currentPosition.getY() + 1458*Math.sin(this.directionAngle);
 
-        return new Point2D.Double(newX, newY);
+        this.currentPosition = new Point2D.Double(newX, newY);
+    }
+
+    public Point2D getPosition() {
+        return this.currentPosition;
     }
 }
