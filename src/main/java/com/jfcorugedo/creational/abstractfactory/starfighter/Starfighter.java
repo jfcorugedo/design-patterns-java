@@ -20,4 +20,6 @@ public abstract class Starfighter {
     public Point2D getPosition() {
         return this.currentPosition;
     }
+
+    public abstract void move();
 }

@@ -19,6 +19,7 @@ public class XWing extends Starfighter{
         return this.speedPerRound;
     }
 
+    @Override
     public void move() {
         double newX = this.currentPosition.getX() + getSpeedPerRound() *Math.cos(this.directionAngle);
         double newY = this.currentPosition.getY() + getSpeedPerRound()*Math.sin(this.directionAngle);
