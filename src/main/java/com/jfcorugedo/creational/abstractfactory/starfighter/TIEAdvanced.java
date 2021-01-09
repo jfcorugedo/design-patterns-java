@@ -1,14 +1,8 @@
 package com.jfcorugedo.creational.abstractfactory.starfighter;
 
-public class TIEAdvanced {
-
-    private int shield;
+public class TIEAdvanced extends Starfighter{
 
     public TIEAdvanced(int shield) {
-        this.shield = shield;
-    }
-
-    public int getShield() {
-        return this.shield;
+        super(shield);
     }
 }

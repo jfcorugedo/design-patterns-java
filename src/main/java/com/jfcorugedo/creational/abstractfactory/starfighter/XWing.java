@@ -6,13 +6,12 @@ import java.awt.geom.Point2D;
 public class XWing extends Starfighter{
 
     private int speedPerRound = 1458;
-    private int shield;
     private Point2D currentPosition;
     private double directionAngle;
     private int laserPower;
 
     public XWing(int shield, int x, int y, double initialAngle, int laserPower) {
-        this.shield = shield;
+        super(shield);
         this.currentPosition = new Point2D.Double(x, y);
         this.directionAngle = initialAngle;
         this.laserPower = laserPower;
@@ -20,10 +19,6 @@ public class XWing extends Starfighter{
 
     public int getSpeedPerRound() {
         return this.speedPerRound;
-    }
-
-    public int getShield() {
-        return shield;
     }
 
     public void move() {
