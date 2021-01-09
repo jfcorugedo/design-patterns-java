@@ -23,4 +23,14 @@ public class TIEAdvancedTest {
 
         assertThat(tieAdvanced.getShield()).isEqualTo(0);
     }
+
+    @Test
+    public void move() {
+
+        TIEAdvanced tieAdvanced = new TIEAdvanced(0, 0, 0);
+        tieAdvanced.move();
+
+        assertThat(tieAdvanced.getPosition().getX()).isEqualTo(tieAdvanced.getSpeedPerRound());
+        assertThat(tieAdvanced.getPosition().getY()).isZero();
+    }
 }

@@ -24,7 +24,7 @@ public class XWingTest {
     }
 
     @Test
-    public void moveXWing() {
+    public void move() {
 
         XWing xWing = (XWing) new AllianceStarfighterFactory().createStartfighter();
         xWing.move();
