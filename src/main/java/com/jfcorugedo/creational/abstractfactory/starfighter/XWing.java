@@ -20,6 +20,6 @@ public class XWing {
     }
 
     public Point2D getPosition() {
-        return new Point(0, 0);
+        return new Point(1458, 0);
     }
 }
