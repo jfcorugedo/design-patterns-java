@@ -19,7 +19,7 @@ public class TIEAdvancedTest {
     @Test
     public void initialShield() {
 
-        TIEAdvanced tieAdvanced = new TIEAdvanced();
+        TIEAdvanced tieAdvanced = new TIEAdvanced(0);
 
         assertThat(tieAdvanced.getShield()).isEqualTo(0);
     }
