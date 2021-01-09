@@ -34,4 +34,8 @@ public class XWing {
     public Point2D getPosition() {
         return this.currentPosition;
     }
+
+    public int attack() {
+        return 200;
+    }
 }
