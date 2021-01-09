@@ -29,7 +29,7 @@ public class XWingTest {
         XWing xWing = (XWing) new AllianceStarfighterFactory().createStartfighter();
         xWing.move();
 
-        assertThat(xWing.getPosition().getX()).isEqualTo(xWing.getSpeedPerRound());
+        assertThat(xWing.getPosition().getX()).isEqualTo(1458);
         assertThat(xWing.getPosition().getY()).isZero();
     }
 

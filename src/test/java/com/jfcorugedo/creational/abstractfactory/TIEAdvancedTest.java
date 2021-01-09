@@ -1,8 +1,6 @@
 package com.jfcorugedo.creational.abstractfactory;
 
-import com.jfcorugedo.creational.abstractfactory.starfighter.AllianceStarfighterFactory;
 import com.jfcorugedo.creational.abstractfactory.starfighter.TIEAdvanced;
-import com.jfcorugedo.creational.abstractfactory.starfighter.XWing;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -19,18 +17,18 @@ public class TIEAdvancedTest {
     @Test
     public void initialShield() {
 
-        TIEAdvanced tieAdvanced = new TIEAdvanced(0);
+        TIEAdvanced tieAdvanced = new TIEAdvanced(0, 0, 0, 0);
 
-        assertThat(tieAdvanced.getShield()).isEqualTo(0);
+        assertThat(tieAdvanced.getShield()).isZero();
     }
 
     @Test
     public void move() {
 
-        TIEAdvanced tieAdvanced = new TIEAdvanced(0, 0, 0);
+        TIEAdvanced tieAdvanced = new TIEAdvanced(0, 0, 0, 0);
         tieAdvanced.move();
 
-        assertThat(tieAdvanced.getPosition().getX()).isEqualTo(tieAdvanced.getSpeedPerRound());
+        assertThat(tieAdvanced.getPosition().getX()).isEqualTo(1667);
         assertThat(tieAdvanced.getPosition().getY()).isZero();
     }
 }
