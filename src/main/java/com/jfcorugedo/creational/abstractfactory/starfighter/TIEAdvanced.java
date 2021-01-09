@@ -5,13 +5,9 @@ import java.awt.geom.Point2D;
 public class TIEAdvanced extends Starfighter{
 
     private int speedPerRound = 1667;
-    private Point2D currentPosition;
-    private double directionAngle;
 
     public TIEAdvanced(int shield, int x, int y, double initialAngle) {
-        super(shield);
-        this.currentPosition = new Point2D.Double(x, y);
-        this.directionAngle = initialAngle;
+        super(shield, x, y, initialAngle);
     }
 
     public int getSpeedPerRound() {
@@ -25,7 +21,4 @@ public class TIEAdvanced extends Starfighter{
         this.currentPosition = new Point2D.Double(newX, newY);
     }
 
-    public Point2D getPosition() {
-        return this.currentPosition;
-    }
 }
