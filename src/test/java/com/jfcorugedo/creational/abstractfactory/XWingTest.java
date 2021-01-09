@@ -17,7 +17,7 @@ public class XWingTest {
     @Test
     public void initialShield() {
 
-        XWing xWing = new XWing(50, 0, 0, 0);
+        XWing xWing = new XWing(50, 0, 0, 0, 200);
 
         assertThat(xWing.getShield()).isEqualTo(50);
     }
@@ -25,7 +25,7 @@ public class XWingTest {
     @Test
     public void moveXWing() {
 
-        XWing xWing = new XWing(50, 0, 0, 0);
+        XWing xWing = new XWing(50, 0, 0, 0, 200);
         xWing.move();
 
         assertThat(xWing.getPosition().getX()).isEqualTo(xWing.getSpeedPerRound());
@@ -35,7 +35,7 @@ public class XWingTest {
     @Test
     public void attack() {
 
-        XWing xWing = new XWing(50, 0, 0, 0);
+        XWing xWing = new XWing(50, 0, 0, 0, 200);
 
         assertThat(xWing.attack()).isEqualTo(4*50);
     }

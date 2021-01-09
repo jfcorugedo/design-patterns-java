@@ -9,11 +9,13 @@ public class XWing {
     private int shield;
     private Point2D currentPosition;
     private double directionAngle;
+    private int laserPower;
 
-    public XWing(int shield, int x, int y, double initialAngle) {
+    public XWing(int shield, int x, int y, double initialAngle, int laserPower) {
         this.shield = shield;
         this.currentPosition = new Point2D.Double(x, y);
         this.directionAngle = initialAngle;
+        this.laserPower = 200;
     }
 
     public int getSpeedPerRound() {
@@ -36,6 +38,6 @@ public class XWing {
     }
 
     public int attack() {
-        return 200;
+        return this.laserPower;
     }
 }
