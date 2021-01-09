@@ -31,4 +31,12 @@ public class XWingTest {
         assertThat(xWing.getPosition().getX()).isEqualTo(xWing.getSpeedPerRound());
         assertThat(xWing.getPosition().getY()).isZero();
     }
+
+    @Test
+    public void attack() {
+
+        XWing xWing = new XWing(50, 0, 0, 0);
+
+        assertThat(xWing.attack()).isEqualTo(4*50);
+    }
 }
