@@ -1,5 +1,6 @@
 package com.jfcorugedo.creational.abstractfactory;
 
+import com.jfcorugedo.creational.abstractfactory.starfighter.AllianceStarfighterFactory;
 import com.jfcorugedo.creational.abstractfactory.starfighter.XWing;
 import org.junit.Test;
 
@@ -17,7 +18,7 @@ public class XWingTest {
     @Test
     public void initialShield() {
 
-        XWing xWing = new XWing(50, 0, 0, 0, 200);
+        XWing xWing = (XWing) new AllianceStarfighterFactory().createStartfighter();
 
         assertThat(xWing.getShield()).isEqualTo(50);
     }
@@ -25,7 +26,7 @@ public class XWingTest {
     @Test
     public void moveXWing() {
 
-        XWing xWing = new XWing(50, 0, 0, 0, 200);
+        XWing xWing = (XWing) new AllianceStarfighterFactory().createStartfighter();
         xWing.move();
 
         assertThat(xWing.getPosition().getX()).isEqualTo(xWing.getSpeedPerRound());
@@ -35,7 +36,7 @@ public class XWingTest {
     @Test
     public void attack() {
 
-        XWing xWing = new XWing(50, 0, 0, 0, 200);
+        XWing xWing = (XWing) new AllianceStarfighterFactory().createStartfighter();
 
         assertThat(xWing.attack()).isEqualTo(4*50);
     }

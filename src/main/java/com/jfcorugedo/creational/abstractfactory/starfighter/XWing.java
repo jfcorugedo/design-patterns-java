@@ -3,7 +3,7 @@ package com.jfcorugedo.creational.abstractfactory.starfighter;
 
 import java.awt.geom.Point2D;
 
-public class XWing {
+public class XWing extends Starfighter{
 
     private int speedPerRound = 1458;
     private int shield;
