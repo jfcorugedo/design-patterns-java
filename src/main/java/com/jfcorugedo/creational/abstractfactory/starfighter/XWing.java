@@ -1,16 +1,18 @@
 package com.jfcorugedo.creational.abstractfactory.starfighter;
 
-import java.awt.Point;
+
 import java.awt.geom.Point2D;
 
 public class XWing {
 
     private int shield;
     private Point2D currentPosition;
+    private double directionAngle;
 
-    public XWing(int shield, int x, int y) {
+    public XWing(int shield, int x, int y, double initialAngle) {
         this.shield = shield;
-        this.currentPosition = new Point(x, y);
+        this.currentPosition = new Point2D.Double(x, y);
+        this.directionAngle = initialAngle;
     }
 
     public int getShield() {
@@ -22,6 +24,9 @@ public class XWing {
     }
 
     public Point2D getPosition() {
-        return new Point(1458, 0);
+        double newX = this.currentPosition.getX() + 1458*Math.cos(this.directionAngle);
+        double newY = this.currentPosition.getY() + 1458*Math.sin(this.directionAngle);
+
+        return new Point2D.Double(newX, newY);
     }
 }
