@@ -1,6 +1,7 @@
 package com.jfcorugedo.creational.abstractfactory;
 
 import com.jfcorugedo.creational.abstractfactory.starfighter.AllianceStarfighterFactory;
+import com.jfcorugedo.creational.abstractfactory.starfighter.TIEAdvanced;
 import com.jfcorugedo.creational.abstractfactory.starfighter.XWing;
 import org.junit.Test;
 
