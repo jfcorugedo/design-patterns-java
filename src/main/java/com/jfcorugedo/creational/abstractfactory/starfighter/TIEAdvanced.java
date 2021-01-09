@@ -22,4 +22,7 @@ public class TIEAdvanced extends Starfighter{
         this.currentPosition = new Point2D.Double(newX, newY);
     }
 
+    public int attack() {
+        return 100;
+    }
 }
