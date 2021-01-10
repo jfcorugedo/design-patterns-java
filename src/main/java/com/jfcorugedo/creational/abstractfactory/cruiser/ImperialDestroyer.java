@@ -3,15 +3,19 @@ package com.jfcorugedo.creational.abstractfactory.cruiser;
 import com.jfcorugedo.creational.abstractfactory.starfighter.Starfighter;
 
 import java.awt.geom.Point2D;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 public class ImperialDestroyer extends Cruiser {
     private int speedPerRound = 1354;
     private int ionCannonPower;
+    private List<Starfighter> starfighters = new ArrayList<>();
 
-    public ImperialDestroyer(int shield, int x, int y, double initialAngle) {
+    public ImperialDestroyer(int shield, int x, int y, double initialAngle, Starfighter... starfighters) {
         super(shield, x, y, initialAngle);
         this.ionCannonPower = 500;
+        this.starfighters.addAll(List.of(starfighters));
     }
 
     public int getSpeedPerRound() {
@@ -32,6 +36,6 @@ public class ImperialDestroyer extends Cruiser {
     }
 
     public Optional<Starfighter> deploy() {
-        return null;
+        return Optional.of(this.starfighters.remove(0));
     }
 }
