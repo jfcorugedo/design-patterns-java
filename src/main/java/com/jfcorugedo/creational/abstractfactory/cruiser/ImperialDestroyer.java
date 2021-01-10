@@ -41,4 +41,7 @@ public class ImperialDestroyer {
         this.setCurrentPosition(new Point2D.Double(newX, newY));
     }
 
+    public int attack() {
+        return 500;
+    }
 }
