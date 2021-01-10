@@ -36,6 +36,9 @@ public class NeutronCruiser extends Cruiser {
     }
 
     public Optional<Starfighter> deploy() {
+        if(this.starfighters.isEmpty()) {
+            return Optional.empty();
+        }
         return Optional.of(this.starfighters.remove(0));
     }
 }
