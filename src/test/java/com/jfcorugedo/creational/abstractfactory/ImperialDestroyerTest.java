@@ -2,7 +2,6 @@ package com.jfcorugedo.creational.abstractfactory;
 
 import com.jfcorugedo.creational.abstractfactory.cruiser.Cruiser;
 import com.jfcorugedo.creational.abstractfactory.cruiser.ImperialCruiserFactory;
-import com.jfcorugedo.creational.abstractfactory.cruiser.ImperialDestroyer;
 import com.jfcorugedo.creational.abstractfactory.starfighter.ImperialStarfighterFactory;
 import com.jfcorugedo.creational.abstractfactory.starfighter.Starfighter;
 import com.jfcorugedo.creational.abstractfactory.starfighter.TIEAdvanced;
