@@ -57,4 +57,15 @@ public class ImperialDestroyerTest {
                 .isNotEmpty()
                 .containsInstanceOf(TIEAdvanced.class);
     }
+
+    @Test
+    public void deployIfThereIsNoStarfightersLeft() {
+
+        Cruiser imperialDestroyer = new ImperialFleetFactory().createCruiser();
+
+        Optional<Starfighter> starfighter = imperialDestroyer.deploy();
+
+        assertThat(starfighter)
+                .isEmpty();
+    }
 }
