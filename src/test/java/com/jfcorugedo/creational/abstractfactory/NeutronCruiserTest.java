@@ -1,6 +1,7 @@
 package com.jfcorugedo.creational.abstractfactory;
 
 import com.jfcorugedo.creational.abstractfactory.cruiser.Cruiser;
+import com.jfcorugedo.creational.abstractfactory.cruiser.ImperialDestroyer;
 import com.jfcorugedo.creational.abstractfactory.cruiser.NeutronCruiser;
 import org.junit.Test;
 
@@ -21,8 +22,18 @@ public class NeutronCruiserTest {
     @Test
     public void initialShield() {
 
-        Cruiser imperialDestroyer = new NeutronCruiser(600, 0, 0, 0);
+        Cruiser neutronCruiser = new NeutronCruiser(600, 0, 0, 0);
 
-        assertThat(imperialDestroyer.getShield()).isEqualTo(600);
+        assertThat(neutronCruiser.getShield()).isEqualTo(600);
+    }
+
+    @Test
+    public void move() {
+
+        Cruiser neutronCruiser = new NeutronCruiser(600, 0, 0, 0);
+        neutronCruiser.move();
+
+        assertThat(neutronCruiser.getCurrentPosition().getX()).isEqualTo(1400);
+        assertThat(neutronCruiser.getCurrentPosition().getY()).isZero();
     }
 }
