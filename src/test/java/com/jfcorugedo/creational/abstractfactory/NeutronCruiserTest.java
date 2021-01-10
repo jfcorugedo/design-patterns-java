@@ -57,4 +57,15 @@ public class NeutronCruiserTest {
                 .isNotEmpty()
                 .containsInstanceOf(XWing.class);
     }
+
+    @Test
+    public void deployIfThereIsNoStarfightersLeft() {
+
+        Cruiser neutronCruiser = new AllianceFleetFactory().createCruiser();
+
+        Optional<Starfighter> starfighter = neutronCruiser.deploy();
+
+        assertThat(starfighter)
+                .isEmpty();
+    }
 }
