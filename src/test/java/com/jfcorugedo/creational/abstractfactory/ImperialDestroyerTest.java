@@ -32,4 +32,12 @@ public class ImperialDestroyerTest {
         assertThat(imperialDestroyer.getCurrentPosition().getX()).isEqualTo(1354);
         assertThat(imperialDestroyer.getCurrentPosition().getY()).isZero();
     }
+
+    @Test
+    public void attack() {
+
+        ImperialDestroyer imperialDestroyer = new ImperialDestroyer(1000, 0, 0, 0);
+
+        assertThat(imperialDestroyer.attack()).isEqualTo(500);
+    }
 }
