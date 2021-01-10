@@ -18,7 +18,7 @@ public class ImperialDestroyerTest {
     @Test
     public void initialShield() {
 
-        ImperialDestroyer imperialDestroyer = new ImperialDestroyer();
+        ImperialDestroyer imperialDestroyer = new ImperialDestroyer(1000);
 
         assertThat(imperialDestroyer.getShield()).isEqualTo(1000);
     }
