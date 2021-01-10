@@ -18,7 +18,7 @@ public class ImperialDestroyerTest {
     @Test
     public void initialShield() {
 
-        ImperialDestroyer imperialDestroyer = new ImperialDestroyer(1000);
+        ImperialDestroyer imperialDestroyer = new ImperialDestroyer(1000, 0, 0, 0);
 
         assertThat(imperialDestroyer.getShield()).isEqualTo(1000);
     }
@@ -26,7 +26,7 @@ public class ImperialDestroyerTest {
     @Test
     public void move() {
 
-        ImperialDestroyer imperialDestroyer = new ImperialDestroyer(1000);
+        ImperialDestroyer imperialDestroyer = new ImperialDestroyer(1000, 0, 0, 0);
         imperialDestroyer.move();
 
         assertThat(imperialDestroyer.getPosition().getX()).isEqualTo(1354);
