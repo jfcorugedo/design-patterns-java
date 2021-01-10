@@ -37,6 +37,9 @@ public class ImperialDestroyer extends Cruiser {
 
     @Override
     public Optional<Starfighter> deploy() {
+        if(this.starfighters.isEmpty()) {
+            return Optional.empty();
+        }
         return Optional.of(this.starfighters.remove(0));
     }
 }
