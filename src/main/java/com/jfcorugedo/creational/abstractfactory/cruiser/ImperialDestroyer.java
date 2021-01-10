@@ -1,6 +1,9 @@
 package com.jfcorugedo.creational.abstractfactory.cruiser;
 
+import com.jfcorugedo.creational.abstractfactory.starfighter.Starfighter;
+
 import java.awt.geom.Point2D;
+import java.util.Optional;
 
 public class ImperialDestroyer extends Cruiser {
     private int speedPerRound = 1354;
@@ -26,5 +29,9 @@ public class ImperialDestroyer extends Cruiser {
     @Override
     public int attack() {
         return ionCannonPower;
+    }
+
+    public Optional<Starfighter> deploy() {
+        return null;
     }
 }
