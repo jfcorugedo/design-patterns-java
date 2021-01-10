@@ -1,6 +1,9 @@
 package com.jfcorugedo.creational.abstractfactory.cruiser;
 
+import com.jfcorugedo.creational.abstractfactory.starfighter.Starfighter;
+
 import java.awt.geom.Point2D;
+import java.util.Optional;
 
 public abstract class Cruiser {
     protected int shield;
@@ -32,4 +35,6 @@ public abstract class Cruiser {
     public abstract void move();
 
     public abstract int attack();
+
+    public abstract Optional<Starfighter> deploy();
 }

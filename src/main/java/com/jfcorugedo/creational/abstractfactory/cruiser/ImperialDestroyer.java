@@ -35,6 +35,7 @@ public class ImperialDestroyer extends Cruiser {
         return ionCannonPower;
     }
 
+    @Override
     public Optional<Starfighter> deploy() {
         return Optional.of(this.starfighters.remove(0));
     }
