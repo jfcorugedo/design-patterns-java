@@ -2,6 +2,8 @@ package com.jfcorugedo.creational.abstractfactory;
 
 import com.jfcorugedo.creational.abstractfactory.cruiser.Cruiser;
 import com.jfcorugedo.creational.abstractfactory.cruiser.ImperialDestroyer;
+import com.jfcorugedo.creational.abstractfactory.starfighter.Starfighter;
+import com.jfcorugedo.creational.abstractfactory.starfighter.TIEAdvanced;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -40,5 +42,14 @@ public class ImperialDestroyerTest {
         Cruiser imperialDestroyer = new ImperialDestroyer(1000, 0, 0, 0);
 
         assertThat(imperialDestroyer.attack()).isEqualTo(500);
+    }
+
+    @Test
+    public void deploy() {
+
+        ImperialDestroyer imperialDestroyer = new ImperialDestroyer(1000, 0, 0, 0);
+
+        assertThat(imperialDestroyer.deploy()).isNotEmpty();
+        assertThat(imperialDestroyer.deploy()).isInstanceOf(TIEAdvanced.class);
     }
 }
