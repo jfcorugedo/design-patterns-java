@@ -1,5 +1,6 @@
 package com.jfcorugedo.creational.abstractfactory;
 
+import com.jfcorugedo.creational.abstractfactory.cruiser.Cruiser;
 import com.jfcorugedo.creational.abstractfactory.cruiser.ImperialDestroyer;
 import org.junit.Test;
 
@@ -18,7 +19,7 @@ public class ImperialDestroyerTest {
     @Test
     public void initialShield() {
 
-        ImperialDestroyer imperialDestroyer = new ImperialDestroyer(1000, 0, 0, 0);
+        Cruiser imperialDestroyer = new ImperialDestroyer(1000, 0, 0, 0);
 
         assertThat(imperialDestroyer.getShield()).isEqualTo(1000);
     }
@@ -26,7 +27,7 @@ public class ImperialDestroyerTest {
     @Test
     public void move() {
 
-        ImperialDestroyer imperialDestroyer = new ImperialDestroyer(1000, 0, 0, 0);
+        Cruiser imperialDestroyer = new ImperialDestroyer(1000, 0, 0, 0);
         imperialDestroyer.move();
 
         assertThat(imperialDestroyer.getCurrentPosition().getX()).isEqualTo(1354);
@@ -36,7 +37,7 @@ public class ImperialDestroyerTest {
     @Test
     public void attack() {
 
-        ImperialDestroyer imperialDestroyer = new ImperialDestroyer(1000, 0, 0, 0);
+        Cruiser imperialDestroyer = new ImperialDestroyer(1000, 0, 0, 0);
 
         assertThat(imperialDestroyer.attack()).isEqualTo(500);
     }
