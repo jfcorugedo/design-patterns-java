@@ -22,4 +22,14 @@ public class ImperialDestroyerTest {
 
         assertThat(imperialDestroyer.getShield()).isEqualTo(1000);
     }
+
+    @Test
+    public void move() {
+
+        ImperialDestroyer imperialDestroyer = new ImperialDestroyer(1000);
+        imperialDestroyer.move();
+
+        assertThat(imperialDestroyer.getPosition().getX()).isEqualTo(1354);
+        assertThat(imperialDestroyer.getPosition().getY()).isZero();
+    }
 }
