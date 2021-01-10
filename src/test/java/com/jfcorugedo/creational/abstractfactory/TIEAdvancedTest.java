@@ -28,8 +28,8 @@ public class TIEAdvancedTest {
         Starfighter tieAdvanced = new ImperialStarfighterFactory().createStartfighter();
         tieAdvanced.move();
 
-        assertThat(tieAdvanced.getPosition().getX()).isEqualTo(1667);
-        assertThat(tieAdvanced.getPosition().getY()).isZero();
+        assertThat(tieAdvanced.getCurrentPosition().getX()).isEqualTo(1667);
+        assertThat(tieAdvanced.getCurrentPosition().getY()).isZero();
     }
 
     @Test

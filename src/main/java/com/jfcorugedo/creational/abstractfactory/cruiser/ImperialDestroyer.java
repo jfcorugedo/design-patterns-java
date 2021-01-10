@@ -1,11 +1,10 @@
 package com.jfcorugedo.creational.abstractfactory.cruiser;
 
-import java.awt.*;
 import java.awt.geom.Point2D;
 
 public class ImperialDestroyer {
     private int shield;
-    private int speedPerRound = 1458;
+    private int speedPerRound = 1354;
     private Point2D currentPosition;
     private double directionAngle;
 
@@ -42,7 +41,4 @@ public class ImperialDestroyer {
         this.setCurrentPosition(new Point2D.Double(newX, newY));
     }
 
-    public Point2D getPosition() {
-        return new Point2D.Double(1354, 0);
-    }
 }

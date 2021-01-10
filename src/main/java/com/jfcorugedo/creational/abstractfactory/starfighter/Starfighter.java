@@ -31,10 +31,6 @@ public abstract class Starfighter {
         return shield;
     }
 
-    public Point2D getPosition() {
-        return this.getCurrentPosition();
-    }
-
     public abstract void move();
 
     public abstract int attack();

@@ -29,7 +29,7 @@ public class ImperialDestroyerTest {
         ImperialDestroyer imperialDestroyer = new ImperialDestroyer(1000, 0, 0, 0);
         imperialDestroyer.move();
 
-        assertThat(imperialDestroyer.getPosition().getX()).isEqualTo(1354);
-        assertThat(imperialDestroyer.getPosition().getY()).isZero();
+        assertThat(imperialDestroyer.getCurrentPosition().getX()).isEqualTo(1354);
+        assertThat(imperialDestroyer.getCurrentPosition().getY()).isZero();
     }
 }
