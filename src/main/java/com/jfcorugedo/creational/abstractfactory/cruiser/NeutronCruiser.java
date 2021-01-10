@@ -4,9 +4,11 @@ import java.awt.geom.Point2D;
 
 public class NeutronCruiser extends Cruiser {
     private int speedPerRound = 1400;
+    private int laserCannonPower;
 
     public NeutronCruiser(int shield, int x, int y, double initialAngle) {
         super(shield, x, y, initialAngle);
+        this.laserCannonPower = 250;
     }
 
     public int getSpeedPerRound() {
@@ -23,6 +25,6 @@ public class NeutronCruiser extends Cruiser {
 
     @Override
     public int attack() {
-        return 0;
+        return this.laserCannonPower;
     }
 }
