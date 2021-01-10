@@ -2,6 +2,9 @@ package com.jfcorugedo.creational.abstractfactory;
 
 import com.jfcorugedo.creational.abstractfactory.cruiser.Cruiser;
 import com.jfcorugedo.creational.abstractfactory.cruiser.NeutronCruiser;
+import com.jfcorugedo.creational.abstractfactory.starfighter.AllianceStarfighterFactory;
+import com.jfcorugedo.creational.abstractfactory.starfighter.Starfighter;
+import com.jfcorugedo.creational.abstractfactory.starfighter.XWing;
 import org.junit.Test;
 
 import java.util.Optional;
@@ -42,5 +45,17 @@ public class NeutronCruiserTest {
         Cruiser neutronCruiser = new NeutronCruiser(600, 0, 0, 0);
 
         assertThat(neutronCruiser.attack()).isEqualTo(250);
+    }
+
+    @Test
+    public void deploy() {
+
+        NeutronCruiser neutronCruiser = new NeutronCruiser(600, 0, 0, 0, new AllianceStarfighterFactory().createStartfighter());
+
+        Optional<Starfighter> starfighter = neutronCruiser.deploy();
+
+        assertThat(starfighter)
+                .isNotEmpty()
+                .containsInstanceOf(XWing.class);
     }
 }
