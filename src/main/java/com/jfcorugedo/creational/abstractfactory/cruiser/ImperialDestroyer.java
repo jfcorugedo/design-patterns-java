@@ -7,11 +7,13 @@ public class ImperialDestroyer {
     private int speedPerRound = 1354;
     private Point2D currentPosition;
     private double directionAngle;
+    private int ionCannonPower;
 
     public ImperialDestroyer(int shield, int x, int y, double initialAngle) {
         this.shield = shield;
         this.setCurrentPosition(new Point2D.Double(x, y));
         this.directionAngle = initialAngle;
+        this.ionCannonPower = 500;
     }
 
     public Point2D getCurrentPosition() {
@@ -42,6 +44,6 @@ public class ImperialDestroyer {
     }
 
     public int attack() {
-        return 500;
+        return ionCannonPower;
     }
 }
