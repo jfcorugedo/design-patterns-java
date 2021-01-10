@@ -17,7 +17,7 @@ public class TIEAdvancedTest {
     @Test
     public void initialShield() {
 
-        Starfighter tieAdvanced = new ImperialStarfighterFactory().createStartfighter();
+        Starfighter tieAdvanced = new ImperialFleetFactory().createStartfighter();
 
         assertThat(tieAdvanced.getShield()).isZero();
     }
@@ -25,7 +25,7 @@ public class TIEAdvancedTest {
     @Test
     public void move() {
 
-        Starfighter tieAdvanced = new ImperialStarfighterFactory().createStartfighter();
+        Starfighter tieAdvanced = new ImperialFleetFactory().createStartfighter();
         tieAdvanced.move();
 
         assertThat(tieAdvanced.getCurrentPosition().getX()).isEqualTo(1667);
@@ -35,7 +35,7 @@ public class TIEAdvancedTest {
     @Test
     public void attack() {
 
-        Starfighter tieAdvanced = new ImperialStarfighterFactory().createStartfighter();
+        Starfighter tieAdvanced = new ImperialFleetFactory().createStartfighter();
 
         assertThat(tieAdvanced.attack()).isEqualTo(2*50);
     }

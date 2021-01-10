@@ -1,7 +1,6 @@
 package com.jfcorugedo.creational.abstractfactory;
 
 import com.jfcorugedo.creational.abstractfactory.cruiser.Cruiser;
-import com.jfcorugedo.creational.abstractfactory.cruiser.ImperialCruiserFactory;
 import com.jfcorugedo.creational.abstractfactory.starfighter.ImperialStarfighterFactory;
 import com.jfcorugedo.creational.abstractfactory.starfighter.Starfighter;
 import com.jfcorugedo.creational.abstractfactory.starfighter.TIEAdvanced;
@@ -24,7 +23,7 @@ public class ImperialDestroyerTest {
     @Test
     public void initialShield() {
 
-        Cruiser imperialDestroyer = new ImperialCruiserFactory().createCruiser();
+        Cruiser imperialDestroyer = new ImperialFleetFactory().createCruiser();
 
         assertThat(imperialDestroyer.getShield()).isEqualTo(1000);
     }
@@ -32,7 +31,7 @@ public class ImperialDestroyerTest {
     @Test
     public void move() {
 
-        Cruiser imperialDestroyer = new ImperialCruiserFactory().createCruiser();
+        Cruiser imperialDestroyer = new ImperialFleetFactory().createCruiser();
         imperialDestroyer.move();
 
         assertThat(imperialDestroyer.getCurrentPosition().getX()).isEqualTo(1354);
@@ -42,7 +41,7 @@ public class ImperialDestroyerTest {
     @Test
     public void attack() {
 
-        Cruiser imperialDestroyer = new ImperialCruiserFactory().createCruiser();
+        Cruiser imperialDestroyer = new ImperialFleetFactory().createCruiser();
 
         assertThat(imperialDestroyer.attack()).isEqualTo(500);
     }
@@ -50,7 +49,7 @@ public class ImperialDestroyerTest {
     @Test
     public void deploy() {
 
-        Cruiser imperialDestroyer = new ImperialCruiserFactory().createCruiser( new ImperialStarfighterFactory().createStartfighter());
+        Cruiser imperialDestroyer = new ImperialFleetFactory().createCruiser( new ImperialStarfighterFactory().createStartfighter());
 
         Optional<Starfighter> starfighter = imperialDestroyer.deploy();
 

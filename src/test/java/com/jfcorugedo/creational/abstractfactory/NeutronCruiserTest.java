@@ -1,6 +1,5 @@
 package com.jfcorugedo.creational.abstractfactory;
 
-import com.jfcorugedo.creational.abstractfactory.cruiser.AllianceCruiserFactory;
 import com.jfcorugedo.creational.abstractfactory.cruiser.Cruiser;
 import com.jfcorugedo.creational.abstractfactory.starfighter.AllianceStarfighterFactory;
 import com.jfcorugedo.creational.abstractfactory.starfighter.Starfighter;
@@ -24,7 +23,7 @@ public class NeutronCruiserTest {
     @Test
     public void initialShield() {
 
-        Cruiser neutronCruiser = new AllianceCruiserFactory().createCruiser();
+        Cruiser neutronCruiser = new AllianceFleetFactory().createCruiser();
 
         assertThat(neutronCruiser.getShield()).isEqualTo(600);
     }
@@ -32,7 +31,7 @@ public class NeutronCruiserTest {
     @Test
     public void move() {
 
-        Cruiser neutronCruiser = new AllianceCruiserFactory().createCruiser();
+        Cruiser neutronCruiser = new AllianceFleetFactory().createCruiser();
         neutronCruiser.move();
 
         assertThat(neutronCruiser.getCurrentPosition().getX()).isEqualTo(1400);
@@ -42,7 +41,7 @@ public class NeutronCruiserTest {
     @Test
     public void attack() {
 
-        Cruiser neutronCruiser = new AllianceCruiserFactory().createCruiser();
+        Cruiser neutronCruiser = new AllianceFleetFactory().createCruiser();
 
         assertThat(neutronCruiser.attack()).isEqualTo(250);
     }
@@ -50,7 +49,7 @@ public class NeutronCruiserTest {
     @Test
     public void deploy() {
 
-        Cruiser neutronCruiser = new AllianceCruiserFactory().createCruiser( new AllianceStarfighterFactory().createStartfighter());
+        Cruiser neutronCruiser = new AllianceFleetFactory().createCruiser( new AllianceStarfighterFactory().createStartfighter());
 
         Optional<Starfighter> starfighter = neutronCruiser.deploy();
 
