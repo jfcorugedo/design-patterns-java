@@ -16,14 +16,14 @@ public class TIEAdvanced extends Starfighter{
 
     @Override
     public void move() {
-        double newX = this.currentPosition.getX() + getSpeedPerRound() *Math.cos(this.directionAngle);
-        double newY = this.currentPosition.getY() + getSpeedPerRound()*Math.sin(this.directionAngle);
+        double newX = this.getCurrentPosition().getX() + getSpeedPerRound() *Math.cos(this.getDirectionAngle());
+        double newY = this.getCurrentPosition().getY() + getSpeedPerRound()*Math.sin(this.getDirectionAngle());
 
-        this.currentPosition = new Point2D.Double(newX, newY);
+        this.setCurrentPosition(new Point2D.Double(newX, newY));
     }
 
     @Override
     public int attack() {
-        return 2 * this.laserPower;
+        return 2 * this.getLaserPower();
     }
 }

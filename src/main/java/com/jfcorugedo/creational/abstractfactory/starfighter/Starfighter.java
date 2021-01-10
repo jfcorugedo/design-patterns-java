@@ -3,16 +3,28 @@ package com.jfcorugedo.creational.abstractfactory.starfighter;
 import java.awt.geom.Point2D;
 
 public abstract class Starfighter {
-    protected int shield;
-    protected Point2D currentPosition;
-    protected double directionAngle;
-    protected int laserPower;
+    private int shield;
+    private Point2D currentPosition;
+    private double directionAngle;
+    private int laserPower;
 
     protected Starfighter(int shield, int x, int y, double initialAngle, int laserPower) {
         this.shield = shield;
-        this.currentPosition = new Point2D.Double(x, y);
+        this.setCurrentPosition(new Point2D.Double(x, y));
         this.directionAngle = initialAngle;
         this.laserPower = laserPower;
+    }
+
+    public Point2D getCurrentPosition() {
+        return currentPosition;
+    }
+
+    public double getDirectionAngle() {
+        return directionAngle;
+    }
+
+    public int getLaserPower() {
+        return laserPower;
     }
 
     public int getShield() {
@@ -20,10 +32,14 @@ public abstract class Starfighter {
     }
 
     public Point2D getPosition() {
-        return this.currentPosition;
+        return this.getCurrentPosition();
     }
 
     public abstract void move();
 
     public abstract int attack();
+
+    protected void setCurrentPosition(Point2D currentPosition) {
+        this.currentPosition = currentPosition;
+    }
 }
