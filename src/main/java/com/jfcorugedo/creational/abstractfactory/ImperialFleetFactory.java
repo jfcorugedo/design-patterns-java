@@ -22,7 +22,7 @@ public class ImperialFleetFactory implements FleetAbstractFactory {
                 .filter( factory -> factory.canCreate(StarshipFactory.StarshipType.STARFIGHTER))
                 .findAny()
                 .get())
-                .createStartfighter();
+                .createStarfighter();
     }
 
     @Override

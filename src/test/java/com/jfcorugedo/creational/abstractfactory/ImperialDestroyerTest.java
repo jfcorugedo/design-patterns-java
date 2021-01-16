@@ -49,7 +49,7 @@ public class ImperialDestroyerTest {
     @Test
     public void deploy() {
 
-        Cruiser imperialDestroyer = new ImperialFleetFactory().createCruiser( new ImperialStarfighterFactory().createStartfighter());
+        Cruiser imperialDestroyer = new ImperialFleetFactory().createCruiser( new ImperialStarfighterFactory().createStarfighter());
 
         Optional<Starfighter> starfighter = imperialDestroyer.deploy();
 

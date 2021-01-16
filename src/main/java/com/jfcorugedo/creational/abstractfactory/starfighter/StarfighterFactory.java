@@ -4,7 +4,7 @@ import com.jfcorugedo.creational.abstractfactory.StarshipFactory;
 
 public interface StarfighterFactory extends StarshipFactory {
 
-    Starfighter createStartfighter();
+    Starfighter createStarfighter();
 
     @Override
     default boolean canCreate(StarshipType type) {

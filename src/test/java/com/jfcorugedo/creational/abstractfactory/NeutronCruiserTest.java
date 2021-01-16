@@ -49,7 +49,7 @@ public class NeutronCruiserTest {
     @Test
     public void deploy() {
 
-        Cruiser neutronCruiser = new AllianceFleetFactory().createCruiser( new AllianceStarfighterFactory().createStartfighter());
+        Cruiser neutronCruiser = new AllianceFleetFactory().createCruiser( new AllianceStarfighterFactory().createStarfighter());
 
         Optional<Starfighter> starfighter = neutronCruiser.deploy();
 
