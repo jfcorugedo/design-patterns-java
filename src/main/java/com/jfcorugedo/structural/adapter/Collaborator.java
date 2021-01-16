@@ -8,4 +8,5 @@ import lombok.Getter;
 public class Collaborator {
 
     private String name;
+    private String surname;
 }
