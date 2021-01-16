@@ -29,4 +29,12 @@ public class CollaboratorTest {
 
         assertThat(collaborator.getCompetencies()).isEqualTo("Java,javascript,TDD");
     }
+
+    @Test
+    public void contactInfo() {
+
+        Collaborator collaborator = Collaborator.builder().contactInfo("jfco@patterns.com").build();
+
+        assertThat(collaborator.getContactInfo()).isEqualTo("jfco@patterns.com");
+    }
 }
