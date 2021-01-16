@@ -11,6 +11,8 @@ public class EmployeeAdapterTest {
 
         EmployeeAdapter employeeAdapter = EmployeeAdapter.builder(Collaborator.class).adaptee(
                 Collaborator.builder().name("Juan").surname("Corugedo").build()
+        ).fullNameAdapter(
+                (collaborator) -> String.format("%s %s", collaborator.getName(), collaborator.getSurname())
         ).build();
 
         assertThat(employeeAdapter.getFullName()).isEqualTo("Juan Corugedo");
