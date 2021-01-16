@@ -87,7 +87,17 @@ This group consists on all the patterns that solves how objects are created:
 
 
 ### Structural
-//TODO
+These patterns have to do with how objects are composed to form larger structures. 
+It takes into account several properties: performance, flexibility, compatibility, responsibilities, etc...
+
+* [Adapter](./docs/structural/Adapter.md)
+* [Bridge](./docs/structural/Bridge.md)
+* [Composite](./docs/structural/Composite.md)
+* [Decorator](./docs/structural/Decorator.md)
+* [Facade](./docs/structural/Facade.md)
+* [Flyweight](./docs/structural/Flyweight.md)
+* [Proxy](./docs/structural/Proxy.md)
+  
 
 ### Behavioral
 //TODO
