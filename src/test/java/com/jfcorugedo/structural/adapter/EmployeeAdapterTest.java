@@ -31,4 +31,14 @@ public class EmployeeAdapterTest {
 
         assertThat(employeeAdapter.getSkills()).contains("Java", "javascript", "TDD");
     }
+
+    @Test
+    public void collaboratorContactInfoToEmployeeEmail() {
+
+        EmployeeAdapter employeeAdapter = EmployeeAdapter.builder(Collaborator.class).adaptee(
+                Collaborator.builder().contactInfo("jfco@patterns.com").build()
+        ).build();
+
+        assertThat(employeeAdapter.getEmail()).hasToString("jfco@patterns.com");
+    }
 }
