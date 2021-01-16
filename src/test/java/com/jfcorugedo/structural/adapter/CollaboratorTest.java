@@ -13,4 +13,12 @@ public class CollaboratorTest {
 
         assertThat(collaborator.getName()).isEqualTo("Juan");
     }
+
+    @Test
+    public void surename() {
+
+        Collaborator collaborator = Collaborator.builder().surname("Corugedo").build();
+
+        assertThat(collaborator.getSurname()).isEqualTo("Corugedo");
+    }
 }
