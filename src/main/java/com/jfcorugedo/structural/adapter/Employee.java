@@ -8,6 +8,6 @@ public class Employee {
     private String firstName;
 
     public String getFullName() {
-        return "Juan Corugedo";
+        return this.firstName;
     }
 }
