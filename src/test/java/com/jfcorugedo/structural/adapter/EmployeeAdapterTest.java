@@ -2,6 +2,8 @@ package com.jfcorugedo.structural.adapter;
 
 import org.junit.Test;
 
+import java.util.Set;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class EmployeeAdapterTest {
@@ -23,6 +25,8 @@ public class EmployeeAdapterTest {
 
         EmployeeAdapter employeeAdapter = EmployeeAdapter.builder(Collaborator.class).adaptee(
                 Collaborator.builder().competencies("Java,javascript,TDD").build()
+        ).skills(
+                (collaborator) -> Set.of(collaborator.getCompetencies().split(","))
         ).build();
 
         assertThat(employeeAdapter.getSkills()).contains("Java", "javascript", "TDD");

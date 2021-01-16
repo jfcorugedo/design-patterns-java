@@ -7,10 +7,12 @@ public class EmployeeAdapter<T> implements Employee {
 
     private T adaptee;
     private Function<T, String> fullNameAdapter;
+    private Function<T, Set<String>> skills;
 
-    EmployeeAdapter(T adaptee, Function<T, String> fullNameAdapter) {
+    EmployeeAdapter(T adaptee, Function<T, String> fullNameAdapter, Function<T, Set<String>> skills) {
         this.adaptee = adaptee;
         this.fullNameAdapter = fullNameAdapter;
+        this.skills = skills;
     }
 
     public static <T> EmployeeAdapterBuilder<T> builder(Class<T> clazz) {
@@ -24,7 +26,7 @@ public class EmployeeAdapter<T> implements Employee {
 
     @Override
     public Set<String> getSkills() {
-        return null;
+        return skills.apply(adaptee);
     }
 
     @Override
@@ -35,6 +37,7 @@ public class EmployeeAdapter<T> implements Employee {
     public static class EmployeeAdapterBuilder<T> {
         private T adaptee;
         private Function<T, String> fullNameAdapter;
+        private Function<T, Set<String>> skills;
 
         EmployeeAdapterBuilder() {
         }
@@ -49,8 +52,13 @@ public class EmployeeAdapter<T> implements Employee {
             return this;
         }
 
+        public EmployeeAdapterBuilder<T> skills(Function<T, Set<String>> skills) {
+            this.skills = skills;
+            return this;
+        }
+
         public EmployeeAdapter<T> build() {
-            return new EmployeeAdapter<>(adaptee, fullNameAdapter);
+            return new EmployeeAdapter<>(adaptee, fullNameAdapter, skills);
         }
 
         public String toString() {
