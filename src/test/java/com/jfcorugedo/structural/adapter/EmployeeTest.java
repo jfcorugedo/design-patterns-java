@@ -36,4 +36,14 @@ public class EmployeeTest {
                 "web components"
         );
     }
+
+    @Test
+    public void email() {
+
+        Employee employee = Employee.builder().email(
+                Email.builder().localPart("jfco").domain("patterns.com").build()
+        ).build();
+
+        assertThat(employees.getEmail().toString()).equalTo("jfco@patterns.com");
+    }
 }
