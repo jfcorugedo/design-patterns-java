@@ -1,20 +1,15 @@
 package com.jfcorugedo.structural.adapter;
 
 import lombok.Builder;
+import lombok.Getter;
 
 import java.util.Set;
 
 @Builder
+@Getter
 public class Employee {
 
-    private String firstName;
+    private String fullName;
     private Set<String> skills;
-
-    public String getFullName() {
-        return this.firstName;
-    }
-
-    public Set<String> getSkills() {
-        return this.skills;
-    }
+    private Email email;
 }

@@ -2,7 +2,6 @@ package com.jfcorugedo.structural.adapter;
 
 import org.junit.Test;
 
-import java.util.HashSet;
 import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -12,7 +11,7 @@ public class EmployeeTest {
     @Test
     public void fullName() {
 
-        Employee employee = Employee.builder().firstName("Juan Corugedo").build();
+        Employee employee = Employee.builder().fullName("Juan Corugedo").build();
 
         assertThat(employee.getFullName()).isEqualTo("Juan Corugedo");
     }
@@ -44,6 +43,6 @@ public class EmployeeTest {
                 Email.builder().localPart("jfco").domain("patterns.com").build()
         ).build();
 
-        assertThat(employees.getEmail().toString()).equalTo("jfco@patterns.com");
+        assertThat(employee.getEmail()).hasToString("jfco@patterns.com");
     }
 }
