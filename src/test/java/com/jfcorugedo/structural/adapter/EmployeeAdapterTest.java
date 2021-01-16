@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class EmployeeAdapterTest {
 
     @Test
-    public void collaboratorNameAndSurnameToEmployeefullName() {
+    public void collaboratorNameAndSurnameToEmployeeFullName() {
 
         EmployeeAdapter employeeAdapter = EmployeeAdapter.builder(Collaborator.class).adaptee(
                 Collaborator.builder().name("Juan").surname("Corugedo").build()
@@ -16,5 +16,15 @@ public class EmployeeAdapterTest {
         ).build();
 
         assertThat(employeeAdapter.getFullName()).isEqualTo("Juan Corugedo");
+    }
+
+    @Test
+    public void collaboratorCompetencesToEmployeeSkills() {
+
+        EmployeeAdapter employeeAdapter = EmployeeAdapter.builder(Collaborator.class).adaptee(
+                Collaborator.builder().competencies("Java,javascript,TDD").build()
+        ).build();
+
+        assertThat(employeeAdapter.getSkills()).contains("Java", "javascript", "TDD");
     }
 }
