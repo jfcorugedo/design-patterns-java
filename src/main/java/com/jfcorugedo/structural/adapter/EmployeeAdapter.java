@@ -8,11 +8,13 @@ public class EmployeeAdapter<T> implements Employee {
     private T adaptee;
     private Function<T, String> fullNameAdapter;
     private Function<T, Set<String>> skills;
+    private Function<T, Email> email;
 
-    EmployeeAdapter(T adaptee, Function<T, String> fullNameAdapter, Function<T, Set<String>> skills) {
+    EmployeeAdapter(T adaptee, Function<T, String> fullNameAdapter, Function<T, Set<String>> skills, Function<T, Email> email) {
         this.adaptee = adaptee;
         this.fullNameAdapter = fullNameAdapter;
         this.skills = skills;
+        this.email = email;
     }
 
     public static <T> EmployeeAdapterBuilder<T> builder(Class<T> clazz) {
@@ -31,13 +33,14 @@ public class EmployeeAdapter<T> implements Employee {
 
     @Override
     public Email getEmail() {
-        return null;
+        return email.apply(adaptee);
     }
 
     public static class EmployeeAdapterBuilder<T> {
         private T adaptee;
         private Function<T, String> fullNameAdapter;
         private Function<T, Set<String>> skills;
+        private Function<T, Email> email;
 
         EmployeeAdapterBuilder() {
         }
@@ -57,12 +60,13 @@ public class EmployeeAdapter<T> implements Employee {
             return this;
         }
 
-        public EmployeeAdapter<T> build() {
-            return new EmployeeAdapter<>(adaptee, fullNameAdapter, skills);
+        public EmployeeAdapterBuilder<T> email(Function<T, Email> email) {
+            this.email = email;
+            return this;
         }
 
-        public String toString() {
-            return "EmployeeAdapter.EmployeeAdapterBuilder(adaptee=" + this.adaptee + ", fullNameAdapter=" + this.fullNameAdapter + ")";
+        public EmployeeAdapter<T> build() {
+            return new EmployeeAdapter<>(adaptee, fullNameAdapter, skills, email);
         }
     }
 }

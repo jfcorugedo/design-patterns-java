@@ -37,6 +37,13 @@ public class EmployeeAdapterTest {
 
         EmployeeAdapter employeeAdapter = EmployeeAdapter.builder(Collaborator.class).adaptee(
                 Collaborator.builder().contactInfo("jfco@patterns.com").build()
+        ).email(
+                (collaborator) -> Email.builder()
+                        .localPart(
+                                collaborator.getContactInfo().split("@")[0]
+                        ).domain(
+                                collaborator.getContactInfo().split("@")[1]
+                        ).build()
         ).build();
 
         assertThat(employeeAdapter.getEmail()).hasToString("jfco@patterns.com");
