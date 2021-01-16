@@ -9,4 +9,5 @@ public class Collaborator {
 
     private String name;
     private String surname;
+    private String competencies;
 }
