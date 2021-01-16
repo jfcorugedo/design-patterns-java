@@ -11,7 +11,7 @@ public class EmployeeTest {
     @Test
     public void fullName() {
 
-        Employee employee = Employee.builder().fullName("Juan Corugedo").build();
+        Employee employee = CompanyEmployee.builder().fullName("Juan Corugedo").build();
 
         assertThat(employee.getFullName()).isEqualTo("Juan Corugedo");
     }
@@ -19,7 +19,7 @@ public class EmployeeTest {
     @Test
     public void skills() {
 
-        Employee employee = Employee.builder().skills(Set.of("Java",
+        Employee employee = CompanyEmployee.builder().skills(Set.of("Java",
                 "Javascript",
                 "TDD",
                 "micronaut",
@@ -39,7 +39,7 @@ public class EmployeeTest {
     @Test
     public void email() {
 
-        Employee employee = Employee.builder().email(
+        Employee employee = CompanyEmployee.builder().email(
                 Email.builder().localPart("jfco").domain("patterns.com").build()
         ).build();
 
