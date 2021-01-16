@@ -21,4 +21,12 @@ public class CollaboratorTest {
 
         assertThat(collaborator.getSurname()).isEqualTo("Corugedo");
     }
+
+    @Test
+    public void competencies() {
+
+        Collaborator collaborator = Collaborator.builder().competencies("Java,javascript,TDD").build();
+
+        assertThat(collaborator.getCompetencies()).isEqualTo("Java,javascript,TDD");
+    }
 }
