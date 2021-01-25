@@ -8,7 +8,7 @@ public class RemoteControl {
         this.device = device;
     }
 
-    public static final RemoteControl newInstance(Device device) { return new RemoteControl(device); }
+    public static RemoteControl newInstance(Device device) { return new RemoteControl(device); }
 
     public void togglePower() {
         if(this.device.isEnabled()) {
@@ -23,6 +23,6 @@ public class RemoteControl {
     }
 
     public void volumeUp() {
-
+        this.device.updateVolume(5);
     }
 }
