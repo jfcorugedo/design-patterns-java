@@ -17,4 +17,8 @@ public class RemoteControl {
             this.device.enable();
         }
     }
+
+    public void volumeDown() {
+
+    }
 }

@@ -8,6 +8,7 @@ import lombok.Getter;
 public class Device {
 
     private boolean enabled;
+    private int volume;
 
     public void disable() {
         this.enabled = false;
