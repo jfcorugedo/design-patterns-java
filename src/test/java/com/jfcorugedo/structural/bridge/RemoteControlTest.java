@@ -60,4 +60,48 @@ public class RemoteControlTest {
 
         assertThat(device.getVolume()).isEqualTo(55);
     }
+
+    @Test
+    public void turnOnRadio() {
+
+        Device device = Radio.builder().status(Radio.Status.OFF).build();
+        RemoteControl remoteControl = RemoteControl.newInstance(device);
+
+        remoteControl.togglePower();
+
+        assertThat(device.isEnabled()).isTrue();
+    }
+
+    @Test
+    public void turnOffRadio() {
+
+        Device device = Radio.builder().status(Radio.Status.ON).build();
+        RemoteControl remoteControl = RemoteControl.newInstance(device);
+
+        remoteControl.togglePower();
+
+        assertThat(device.isEnabled()).isFalse();
+    }
+
+    @Test
+    public void volumeDownRadio() {
+
+        Device device = Radio.builder().volume(50).build();
+        RemoteControl remoteControl = RemoteControl.newInstance(device);
+
+        remoteControl.volumeDown();
+
+        assertThat(device.getVolume()).isEqualTo(45);
+    }
+
+    @Test
+    public void volumeUpRadio() {
+
+        Device device = Radio.builder().volume(50).build();
+        RemoteControl remoteControl = RemoteControl.newInstance(device);
+
+        remoteControl.volumeUp();
+
+        assertThat(device.getVolume()).isEqualTo(55);
+    }
 }
