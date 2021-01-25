@@ -16,4 +16,15 @@ public class RemoteControlTest {
 
         assertThat(device.isEnabled()).isTrue();
     }
+
+    @Test
+    public void turnOffDevice() {
+
+        Device device = Device.builder().enabled(true).build();
+        RemoteControl remoteControl = RemoteControl.newInstance(device);
+
+        remoteControl.togglePower();
+
+        assertThat(device.isEnabled()).isFalse();
+    }
 }
