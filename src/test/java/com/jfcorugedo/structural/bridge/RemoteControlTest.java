@@ -49,4 +49,15 @@ public class RemoteControlTest {
 
         assertThat(device.getVolume()).isEqualTo(0);
     }
+
+    @Test
+    public void volumeUp() {
+
+        Device device = Device.builder().volume(50).build();
+        RemoteControl remoteControl = RemoteControl.newInstance(device);
+
+        remoteControl.volumeUp();
+
+        assertThat(device.getVolume()).isEqualTo(55);
+    }
 }
