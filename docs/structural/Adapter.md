@@ -1,6 +1,6 @@
 # Concepts
 
-This pattern allows diferent objects to work together even if there are some incompatibilities between the interface the client is expecting to use.
+This pattern allows different objects to work together even if there are some incompatibilities between the interface the client is expecting to use.
 So this pattern converts the interface of a class into another interface clients expect. 
 
 * **Solve incompatibilities:** Use it when you need to use an existing class, and its interface does not match the one you need.
