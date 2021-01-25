@@ -19,6 +19,11 @@ public class Device {
     }
 
     public void updateVolume(int diff) {
-        this.volume = this.volume + diff;
+        int newVolume = this.volume + diff;
+        if(newVolume >= 0) {
+            this.volume = newVolume;
+        } else {
+            this.volume = 0;
+        }
     }
 }
