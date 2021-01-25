@@ -11,6 +11,10 @@ public class RemoteControl {
     public static final RemoteControl newInstance(Device device) { return new RemoteControl(device); }
 
     public void togglePower() {
-
+        if(this.device.isEnabled()) {
+            this.device.disable();
+        } else {
+            this.device.enable();
+        }
     }
 }
