@@ -21,4 +21,8 @@ public class RemoteControl {
     public void volumeDown() {
         this.device.updateVolume(-5);
     }
+
+    public void volumeUp() {
+
+    }
 }
