@@ -1,29 +1,13 @@
 package com.jfcorugedo.structural.bridge;
 
-import lombok.Builder;
-import lombok.Getter;
+public interface Device {
+    void disable();
 
-@Builder
-@Getter
-public class Device {
+    void enable();
 
-    private boolean enabled;
-    private int volume;
+    void updateVolume(int diff);
 
-    public void disable() {
-        this.enabled = false;
-    }
+    boolean isEnabled();
 
-    public void enable() {
-        this.enabled = true;
-    }
-
-    public void updateVolume(int diff) {
-        int newVolume = this.volume + diff;
-        if(newVolume >= 0) {
-            this.volume = newVolume;
-        } else {
-            this.volume = 0;
-        }
-    }
+    int getVolume();
 }

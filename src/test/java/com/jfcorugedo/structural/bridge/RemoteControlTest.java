@@ -9,7 +9,7 @@ public class RemoteControlTest {
     @Test
     public void turnOn() {
 
-        Device device = Device.builder().enabled(false).build();
+        Device device = TV.builder().enabled(false).build();
         RemoteControl remoteControl = RemoteControl.newInstance(device);
 
         remoteControl.togglePower();
@@ -20,7 +20,7 @@ public class RemoteControlTest {
     @Test
     public void turnOff() {
 
-        Device device = Device.builder().enabled(true).build();
+        Device device = TV.builder().enabled(true).build();
         RemoteControl remoteControl = RemoteControl.newInstance(device);
 
         remoteControl.togglePower();
@@ -31,7 +31,7 @@ public class RemoteControlTest {
     @Test
     public void volumeDown() {
 
-        Device device = Device.builder().volume(50).build();
+        Device device = TV.builder().volume(50).build();
         RemoteControl remoteControl = RemoteControl.newInstance(device);
 
         remoteControl.volumeDown();
@@ -42,7 +42,7 @@ public class RemoteControlTest {
     @Test
     public void volumeCanNeverBeNegative() {
 
-        Device device = Device.builder().volume(0).build();
+        Device device = TV.builder().volume(0).build();
         RemoteControl remoteControl = RemoteControl.newInstance(device);
 
         remoteControl.volumeDown();
@@ -53,7 +53,7 @@ public class RemoteControlTest {
     @Test
     public void volumeUp() {
 
-        Device device = Device.builder().volume(50).build();
+        Device device = TV.builder().volume(50).build();
         RemoteControl remoteControl = RemoteControl.newInstance(device);
 
         remoteControl.volumeUp();
