@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class RemoteControlTest {
 
     @Test
-    public void turnOnDevice() {
+    public void turnOn() {
 
         Device device = Device.builder().enabled(false).build();
         RemoteControl remoteControl = RemoteControl.newInstance(device);
@@ -18,7 +18,7 @@ public class RemoteControlTest {
     }
 
     @Test
-    public void turnOffDevice() {
+    public void turnOff() {
 
         Device device = Device.builder().enabled(true).build();
         RemoteControl remoteControl = RemoteControl.newInstance(device);
@@ -26,5 +26,16 @@ public class RemoteControlTest {
         remoteControl.togglePower();
 
         assertThat(device.isEnabled()).isFalse();
+    }
+
+    @Test
+    public void volumeDown() {
+
+        Device device = Device.builder().volume(50).build();
+        RemoteControl remoteControl = RemoteControl.newInstance(device);
+
+        remoteControl.volumeDown();
+
+        assertThat(device.getVolume()).isEqualTo(45);
     }
 }
