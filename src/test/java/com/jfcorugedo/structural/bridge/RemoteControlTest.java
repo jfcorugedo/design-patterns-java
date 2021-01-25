@@ -47,7 +47,7 @@ public class RemoteControlTest {
 
         remoteControl.volumeDown();
 
-        assertThat(device.getVolume()).isEqualTo(0);
+        assertThat(device.getVolume()).isZero();
     }
 
     @Test
