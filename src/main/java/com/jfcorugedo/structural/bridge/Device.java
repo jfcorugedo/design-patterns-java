@@ -17,4 +17,8 @@ public class Device {
     public void enable() {
         this.enabled = true;
     }
+
+    public void updateVolume(int diff) {
+        this.volume = this.volume + diff;
+    }
 }
