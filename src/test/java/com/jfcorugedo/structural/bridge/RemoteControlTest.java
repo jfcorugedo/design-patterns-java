@@ -38,4 +38,15 @@ public class RemoteControlTest {
 
         assertThat(device.getVolume()).isEqualTo(45);
     }
+
+    @Test
+    public void volumeCanNeverBeNegative() {
+
+        Device device = Device.builder().volume(0).build();
+        RemoteControl remoteControl = RemoteControl.newInstance(device);
+
+        remoteControl.volumeDown();
+
+        assertThat(device.getVolume()).isEqualTo(0);
+    }
 }
